@@ -15,5 +15,29 @@ If a player has more than 0 points they decide if they want to keep playing.
 If a player decides not to play again the game is over.
 
 ## Game Design
-Object: cards
+
+Class: Cards
+---
 -random generate card value from 1-13
+-keep points
+value:int
+points:int
+---
+card_draw():None
+---
+
+Class: Director
+---
+score: int
+total score: int
+cards: list
+player: boolean
+---
+start_game():None
+get_prompt():None
+do_updates():None
+---
+
+Function:
+main()
+# starts the game
