@@ -39,6 +39,8 @@ class Director:
         """
         Updates game play, produces new scord and creates new cards
         """
+        if not self.is_playing:
+            return 
         self.cards.append(self.card)
         card = self.cards[self.i]
         self.card_now = card.value
@@ -57,6 +59,8 @@ class Director:
         Displays the game to the user
         Runs prompts
         """
+        if not self.is_playing:
+            return         
         card = self.cards[self.i]
         print(f"The card is: {card.value}")
         card_guess = input("Higher or lower? [h/l] ")
@@ -68,9 +72,9 @@ class Director:
             return
         play_again = input("Play again? [y/n]")
         print("")
-        if play_again == "n":
-            self.is_playing == False
-            return
+        self.is_playing = (play_again == "y")
+
+
         
 def main():
     director = Director()
