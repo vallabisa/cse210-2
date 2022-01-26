@@ -32,15 +32,13 @@ class Director:
         """
         Starts the game by running the main game loop.
         """
-        while self.is_playing:
+        while self.is_playing == True:
             self.get_prompts()
 
     def do_updates(self, card_guess):
         """
         Updates game play, produces new scord and creates new cards
         """
-        if not self.is_playing:
-            return 
         self.cards.append(self.card)
         card = self.cards[self.i]
         self.card_now = card.value
@@ -59,15 +57,15 @@ class Director:
         Displays the game to the user
         Runs prompts
         """
-        if not self.is_playing:
-            return 
         card = self.cards[self.i]
         print(f"The card is: {card.value}")
         card_guess = input("Higher or lower? [h/l] ")
         self.do_updates(card_guess)
         print(f"Next card was: {card.value}")
         print(f"Your score is: {self.total_score}")
-        self.is_playing == (self.total_score > 0)
+        if self.total_score < 0:
+            self.is_playing == False
+            return
         play_again = input("Play again? [y/n]")
         print("")
         if play_again == "n":
