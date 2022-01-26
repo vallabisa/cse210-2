@@ -10,6 +10,9 @@ class Hilo:
         self.value = 0
         
     def set_value(self):
+        """
+        Set the card value
+        """
         self.value = random.randint(1, 13)
 
 class Director:
@@ -19,8 +22,7 @@ class Director:
     When the score reaches 0 the game stops, if the player does not 
     want to play again the game stops 
     """
-    def __init__(self):
-        
+    def __init__(self):    
         self.score = 300
         self.cards = []
         self.is_playing = True
@@ -81,6 +83,9 @@ class Director:
 
         
 def main():
+    """
+    Call the director class to run the game.
+    """
     director = Director()
     director.start_game()
 
