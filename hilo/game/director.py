@@ -4,7 +4,7 @@ class Director:
         
         self.is_playing = True
         
-        self.total_score = 10
+        self.total_score = 300
         
       
         
