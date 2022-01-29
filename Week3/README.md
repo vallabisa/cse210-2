@@ -19,3 +19,8 @@ root (root folder)
 +-- Hilo game (code game file)
     +-- Hilo.py (game code)
     +-- Game Design (game design)
+## Authors
+---
+* Raydon Vetten - Leader
+* Val Labisa
+
